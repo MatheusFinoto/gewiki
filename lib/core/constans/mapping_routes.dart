@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,22 +24,20 @@ class RouteConstants {
 
   static String removeSlash(String s) => s.replaceAll("/", "");
 
-  static GoRouter router = GoRouter(
-    routes: [
-      GoRoute(
+  static GoRouter router = GoRouter(routes: [
+    GoRoute(
         path: "/",
         pageBuilder: (_, __) => const MaterialPage(
-          child: BaseView(),
-        ),
+              child: BaseView(),
+            ),
         routes: [
           GoRoute(
-            path: removeSlash(home),
-            pageBuilder: (_, __) => const MaterialPage(child: BaseView())
-          ),
+              path: removeSlash(home),
+              pageBuilder: (_, __) => const MaterialPage(child: BaseView())),
           GoRoute(
-            path: removeSlash(professions),
-            pageBuilder: (_, __) => const MaterialPage(child: ProfessionsView())
-          ),
+              path: removeSlash(professions),
+              pageBuilder: (_, __) =>
+                  const MaterialPage(child: ProfessionsView())),
           // GoRoute(
           //   path: removeSlash(newPassword),
           //   pageBuilder: (_, __) => const MaterialPage(child: CreateNewPasswordView())
@@ -103,8 +100,6 @@ class RouteConstants {
           //   path: removeSlash(signUp),
           //   pageBuilder: (_, __) => const MaterialPage(child: SignUpView())
           // ),
-        ]
-      ),
-    ]
-  );
+        ]),
+  ]);
 }
